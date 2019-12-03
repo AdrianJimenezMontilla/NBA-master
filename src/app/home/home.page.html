@@ -1,0 +1,59 @@
+<ion-header id="header-equipos">
+  <ion-toolbar>
+    <ion-title id="titulo">
+    <img src ="../assets/nbalogo.png" id="logo">
+    <font color="white">Equipos</font>
+    </ion-title>
+  </ion-toolbar>
+  <ion-button class="f" size="small" slot="end" (click)="openModal()">Sobre mi</ion-button>
+  <ion-button class="s" size="small" href ="/guardar"> Favoritos</ion-button>
+</ion-header>
+
+<ion-content>
+  
+  <div class="ion-padding" id="cuerpo">
+    <h1><font color="white">Los Angeles Lakers</font></h1>
+    <ion-item>
+        <ion-button color="danger" slot="end" size="medium" href ="/plantilla">
+          Ver plantilla
+        </ion-button>
+      <img src="../assets/lakers1.png">
+    </ion-item>
+        
+    <h1><font color="white">Chicago Bulls</font></h1>
+    <ion-item>
+      <img src="../assets/bulls.png">
+      <ion-button color="danger" slot="end" size="medium" href ="/plantilla-chicago">
+          Ver plantilla
+      </ion-button>
+    </ion-item>
+    <h1><font color="white">Boston Celtics</font></h1>
+    <ion-item>
+      <img src="../assets/boston.png">
+      <ion-button color="danger" slot="end" size="medium" href ="">
+          Ver plantilla
+      </ion-button>
+    </ion-item>
+    <h1><font color="white">Cleveland Caballiers</font></h1>
+    <ion-item>
+      <img src="../assets/cleveland.png">
+      <ion-button color="danger" slot="end" size="medium" href ="">
+          Ver plantilla
+      </ion-button>
+    </ion-item>
+    <h1><font color="white">Toronto Raptors</font></h1>
+    <ion-item>
+        <img src="../assets/toronto.png">
+        <ion-button color="danger" slot="end" size="medium" href ="">
+            Ver plantilla
+        </ion-button>
+      </ion-item>
+      <h1><font color="white">Miami Heat</font></h1>
+      <ion-item>
+          <img src="../assets/miami.png">
+          <ion-button color="danger" slot="end" size="medium" href ="">
+              Ver plantilla
+          </ion-button>
+        </ion-item>
+  </div>
+</ion-content>

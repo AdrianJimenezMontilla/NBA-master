@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Plantilla Chicago Bulls</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content class="ion-text-center">
+      <ion-list>
+        <ion-item-divider></ion-item-divider>
+        <div *ngFor="let j of jugadores">
+          <ion-item *ngIf="j.equipo == 'Chicago Bulls'">
+            <div (click)="muestraDetalles(j.nombre)">
+              <h1>{{ j.nombre }}</h1>
+              <ion-img src="assets/img/{{ j.foto }}"></ion-img>
+              <div *ngIf="isClicked && jugadores[index].nombre == j.nombre" class="detalles">
+                <h2> Edad:
+                   {{ j.edad }}
+                </h2>
+                <h2> Altura:
+                   {{ j.altura }}
+                </h2>
+                <h2> Peso:
+                   {{ j.peso }}
+                </h2>
+                <h2>
+                  <ion-icon name="basketball"> </ion-icon> {{ j.posicion}}
+                </h2>
+                <ion-button>Añadir a favoritos</ion-button>
+  
+              </div>
+            </div>
+          </ion-item>
+          <ion-item-divider></ion-item-divider>
+        </div>
+      </ion-list>
+    </ion-content>

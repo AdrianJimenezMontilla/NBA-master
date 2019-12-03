@@ -1,0 +1,72 @@
+<ion-header id="header-equipos">
+  <ion-toolbar>
+    <ion-title id="titulo"><font color="white">Favoritos</font></ion-title>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="home"></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div id="cuerpo">
+    <ion-item>
+      <ion-label position="floating">Nombre del jugador</ion-label>
+      <ion-select color="danger" okText="Aceptar" cancelText="Cancelar"
+        [(ngModel)]="favorito.title" [(ngModel)]="title">
+            <ion-select-option value="LeBron James">LeBron James</ion-select-option>
+            <ion-select-option value="Luka Doncic">Luka Doncic</ion-select-option>
+            <ion-select-option value="James Harden">James Harden</ion-select-option>
+            <ion-select-option value="Stephen Curry">Stephen Curry</ion-select-option>
+            <ion-select-option value="Kevin Durant">Kevin Durant </ion-select-option>
+            <ion-select-option value="LeBron James">LeBron James</ion-select-option>
+            <ion-select-option value="Luka Doncic">Luka Doncic</ion-select-option>
+            <ion-select-option value="James Harden">James Harden</ion-select-option>
+            <ion-select-option value="Stephen Curry">Stephen Curry</ion-select-option>
+            <ion-select-option value="Kevin Durant">Kevin Durant </ion-select-option>
+          </ion-select>
+    </ion-item>
+    <br>
+    <ion-button color="danger" (click)="saveFavorito()" expand="full">
+      Guardar
+    </ion-button>
+     
+    <div class="ion-padding">
+        <ion-list>
+          <ion-item *ngFor="let f of favoritos">
+            
+            <ion-label>{{ f.title }}</ion-label>
+            <br>
+            <ion-img src="assets/img/{{ f.title }}.png"></ion-img>
+            <ion-icon name="blank"></ion-icon>
+            
+        <ion-icon
+          name="trash"
+          (click)="presentAlertConfirm(f.id, f.title)">
+        </ion-icon>
+        
+          </ion-item>
+
+          <ion-item >
+              <ion-item *ngIf="title != ''">
+                  
+                  <ion-img src="assets/img/{{ title }}.png"></ion-img>
+              </ion-item>
+
+          </ion-item>
+          
+
+          <ion-item> 
+              <ion-label>{{ title }}</ion-label>
+              <ion-icon name="blank"></ion-icon>
+            
+        <ion-icon *ngIf="title != ''"
+          name="trash"
+          (click)="presentAlertConfirm(f.id, f.title)">
+        </ion-icon>
+          
+          </ion-item>
+        
+        </ion-list> 
+    </div>
+    </div>
+  </ion-content>
