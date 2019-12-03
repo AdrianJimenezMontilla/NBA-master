@@ -17,6 +17,8 @@ export class GuardarPage implements OnInit {
   favoritos: Favorito[] = [];
   jugadores: Jugador[] = [];
   jugador: Jugador;
+  isClicked: boolean = false;
+  index: number;
 
   title: string = '';
 
@@ -50,6 +52,14 @@ export class GuardarPage implements OnInit {
     this.nbaService.saveFavorito(this.favorito);
    
   }
+  muestraDetalles(id: string) {
+    // busca en el array de objetos el titulo que recibe como parametro
+        this.index = this.jugadores.findIndex(j => j.nombre == id);
+    
+        this.jugador = this.nbaService.getJugador(id);
+        console.log(this.jugador);
+        this.isClicked = !this.isClicked;
+      }
 
   deleteFavorito(id: number) {
     this.nbaService.deleteFavorito(id).then(
